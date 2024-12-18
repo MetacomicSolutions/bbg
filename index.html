@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binaural Beat Generator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <link rel="icon" href="brain1.png" type="image/png">
+    <link rel="shortcut icon" href="brain1.png" type="image/png">
+</head>
+<body>
+
+    <div class="logo">
+        <a href="binuralbeats.html"><img class="brain" src="brain.png" alt="Brain Logo"></a>
+    </div>
+    <h1>Binaural Beat Generator</h1>
+    <small style="margin-top: -2vh; color: rgb(48, 48, 48); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-top: -10px;">BinauralBeatGenerator.com</small>
+
+    <!-- Frequency Difference Display -->
+    <div id="frequency-difference-container">
+        <p style="margin-top: -2vh; color: white; font-size: 5rem;" id="frequency-difference">0 Hz</p>
+        
+<!-- Mixer controls container -->
+ <!-- Image to trigger the div (now with id 'mixer-image') -->
+<img style="height: 5vh; margin-top: 0vh; margin-bottom: 1vh;" src="sound-controller.png" id="mixer-image" alt="Click to open volume controls" style="cursor: pointer;">
+<small style="margin-top: -2vh; color: rgb(20, 20, 20); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-bottom: 0; margin-top: -10px;">Mixer</small>
+
+<div class="mixer-container" style="display: none;">
+    <small style="font-size: 1rem; margin-top: -4vh; color: rgba(119, 38, 38, 0.479); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-top: -10px;">click again to close.</small>
+    <div class="volume-controls">
+        <div style="color: white;">
+            Match Left and Right Volumes
+        </div>
+        <label>
+            <input type="checkbox" id="link-volumes">
+        </label>
+    
+        <div class="volume-slider">
+            <div style="margin-bottom: -2vh;><label for="left-volume">Left Volume:</label></div>
+            <input type="range" id="left-volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+    
+        <div class="volume-slider">
+            <div style="margin-bottom: -2vh;><label for="right-volume">Right Volume:</label></div>
+            <input type="range" id="right-volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+    </div>
+    
+    <div class="loop-volume">
+        <div style="color: white; margin-bottom: -2vh;"><label for="loop-volume">Looped Audio Volume:</label></div>
+        <input type="range" id="loop-volume" min="0" max="1" step="0.01" value="0.3">
+    </div>
+        
+    <div class="reset-button">
+        <button style="margin-bottom: -2vh; margin-top: -4vh; border: none; color: rgb(95, 0, 0); background-color: rgba(0, 0, 255, 0);" id="reset-button">Reset to Default</button>
+    </div>
+       <!-- Information -->
+       <p style="color: black;" id="info"></p>
+</div>
+
+    </div>
+    
+
+    <!-- Flex container for side-by-side input fields -->
+    <div class="flex-container">
+        <div class="input-group">
+            <label for="left-frequency">Left Ear Frequency (Hz): </label>
+            <input type="number" id="left-frequency" value="532" min="20" max="2000">
+        </div>
+        <div class="input-group">
+            <label for="right-frequency">Right Ear Frequency (Hz): </label>
+            <input type="number" id="right-frequency" value="528" min="20" max="2000">
+        </div>
+    </div>
+
+    
+    <div class="input-group" style="text-align: center; margin: 20px 0;">
+        <input type="file" id="audio-file" accept="audio/*" onchange="updateLabel()" 
+               style="opacity: 0; position: absolute; width: 1px; height: 1px;">
+        <button onclick="document.getElementById('audio-file').click()" 
+                style="background-color: #00d9b2; color: white; border: none; padding: 12px 20px; font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; text-align: center; display: inline-block; transition: background-color 0.3s ease, transform 0.2s ease;">
+            Loop Your Own MP3 File (optional)
+        </button>
+    </div>
+
+    <!-- Control Buttons -->
+    <div class="container">
+        <button id="play-button" onclick="playBinauralBeats()">Play</button>
+        <button id="stop-button" onclick="stopBinauralBeats()" style="display:none;">Stop</button>
+
+        <!-- Share Button -->
+        <div style="margin-top: -1vh;">
+            <img class="share-button" src="share.png" alt="">
+         </div>
+            
+
+ 
+    <a style="text-decoration: none; color: #00d9b2;" href="binuralbeats.html"><p>Guide</p></a>
+    
+
+
+    <script src="script.js"></script> <!-- Link to the JS file -->
+</body>
+</html>
