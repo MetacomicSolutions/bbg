@@ -1,8 +1,8 @@
 {
-  "short_name": "Binaural Beats",  // Short name for your app
+  "short_name": "Binaural Beat Generator",  // Short name for your app
   "name": "Binaural Beat Generator",  // Full name of your app
   "description": "Generate binaural beats for relaxation, focus, or meditation",  // Your app's description
-  "start_url": "https://metacomicsolutions.github.io/beat",  // Start URL for your app (adjusted for your app's URL)
+  "start_url": "https://metacomicsolutions.github.io/bbg",  // Start URL for your app (adjusted for your app's URL)
   "display": "standalone",  // The display mode for your PWA
   "background_color": "#1e1e1e",  // Splash screen background color (dark background for your app)
   "theme_color": "#1e1e1e",  // Theme color for the status bar on mobile devices
